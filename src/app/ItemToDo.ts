@@ -1,6 +1,6 @@
 export interface ItemToDo{
     id: string,
     descricao : string,
-    dataCriacao: number,
+    dataCriacao: string,
     valorUpdate: string
 }
