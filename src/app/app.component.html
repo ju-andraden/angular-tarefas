@@ -1,9 +1,15 @@
-<div class="container">
 
+<div class="container">
   <div>
     <h2>Tarefas a fazer</h2>
   </div>
-
+  <tr>
+    <td width="113" height="10">Descrição da Tarefa</td>
+  </tr>
+  <tr>
+    <td height="40"><input type="text" [(ngModel)]="tarefa.descricao"></td>
+  </tr>
+  <button (click)="addTarefa()" class="btn btn-success">Adicionar</button>
   <ul>
     <li *ngFor="let item of tarefas" class="list-group-item">
       <table width="700">
@@ -21,17 +27,4 @@
       <button (click)="updateTarefa(item)" class="btn btn-primary" id="botaoAtualizar">Atualizar</button>
     </li>
   </ul>
-
-  <tr>
-    <!--td width="101" height="40">Id</td-->
-    <td width="113" height="10">Descrição da Tarefa</td>
-    <!--td width="140" height="10">Data de Criação da Tarefa</td-->
-  </tr>
-  <tr>
-    <!--td height="40"><input type="text" [(ngModel)]="tarefa.id"></td-->
-    <td height="40"><input type="text" [(ngModel)]="tarefa.descricao"></td>
-    <!--td height="40"><input type="text" [(ngModel)]="tarefa.dataCriacao"></td-->
-  </tr>
-  <button (click)="addTarefa()" class="btn btn-success">Adicionar</button>
-
 </div>
