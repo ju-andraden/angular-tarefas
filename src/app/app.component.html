@@ -1,30 +1,36 @@
-
 <div class="container">
-  <div>
-    <h2>Tarefas a fazer</h2>
-  </div>
-  <tr>
-    <td width="113" height="10">Descrição da Tarefa</td>
-  </tr>
-  <tr>
-    <td height="40"><input type="text" [(ngModel)]="tarefa.descricao"></td>
-  </tr>
-  <button (click)="addTarefa()" class="btn btn-success">Adicionar</button>
-  <ul>
-    <li *ngFor="let item of tarefas" class="list-group-item">
-      <table width="700">
+  <form>
+    <h3>Tarefas a Fazer</h3>
+    <div class="row">
+      <table class="table">
         <tr>
-          <td width="200" height="40">Id <p>{{item.id}}</p>
-          </td>
-          <td width="113" height="10">Descrição da Tarefa <p>{{item.descricao}}</p>
-          </td>
-          <td width="140" height="10">Data de Criação da Tarefa <p>{{item.dataCriacao}}</p>
+          <td>Adicionar tarefa</td>
+          <td>
+            <div>
+            <input [(ngModel)]="tarefa.descricao" name="tarefa" class="text-danger">
+            <button (click)="addTarefa()" class="btn btn-success">Adicionar</button>
+            </div>
           </td>
         </tr>
       </table>
-      <button (click)="removeTarefa(item)" class="btn btn-danger">Remover</button>
-      <input type="text" [(ngModel)]="item.valorUpdate">
-      <button (click)="updateTarefa(item)" class="btn btn-primary" id="botaoAtualizar">Atualizar</button>
-    </li>
-  </ul>
+    </div>
+    <div class="row">
+      <table class="table table-striped">
+        <tr>
+          <td>Id</td>
+          <td>Descrição</td>
+          <td>Data de Criação</td>
+          <td>Atualiza</td>
+          <td>Deleta</td>
+        </tr>
+        <tr *ngFor="let item of tarefas">
+          <td>{{item.id}}</td>
+          <td>{{item.descricao}}</td>
+          <td>{{item.dataCriacao}}</td>
+          <td><a (click)="updateTarefa(item)" class="btn btn-warning">Atualizar</a></td>
+          <td><a (click)="removeTarefa(item)" class="btn btn-danger">Deletar</a></td>
+        </tr>
+      </table>
+    </div>
+  </form>
 </div>
