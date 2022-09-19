@@ -4,11 +4,10 @@
     <div class="row">
       <table class="table">
         <tr>
-          <td>Adicionar tarefa</td>
           <td>
             <div>
-            <input [(ngModel)]="tarefa.descricao" name="tarefa" class="text-danger">
-            <button (click)="addTarefa()" class="btn btn-success">Adicionar</button>
+              <input [(ngModel)]="tarefa.descricao" name="tarefa" class="text-danger" placeholder="Digite a tarefa">
+              <button (click)="addTarefa()" class="btn btn-success">Adicionar</button>
             </div>
           </td>
         </tr>
@@ -27,7 +26,9 @@
           <td>{{item.id}}</td>
           <td>{{item.descricao}}</td>
           <td>{{item.dataCriacao}}</td>
-          <td><a (click)="updateTarefa(item)" class="btn btn-warning">Atualizar</a></td>
+          <td><a (click)="updateTarefa(item)" class="btn btn-warning">Atualizar</a>
+            <input type="text" [(ngModel)]="item.valorUpdate" name="atualizaTarefa">
+          </td>
           <td><a (click)="removeTarefa(item)" class="btn btn-danger">Deletar</a></td>
         </tr>
       </table>

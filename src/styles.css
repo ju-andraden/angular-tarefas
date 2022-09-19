@@ -1,1 +1,6 @@
-@import '~bootstrap/dist/css/bootstrap.min.css';
+body {
+    background-image: url("https://www.homemmaquina.com.br/wp-content/uploads/2021/01/3235815-scaled.jpg");
+    background-size: 92%;
+    justify-content: center;
+    display: flex;
+}
